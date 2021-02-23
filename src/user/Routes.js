@@ -12,7 +12,7 @@ import AddProduct from '../Admin/AddProduct'
 import Orders from '../Admin/Orders'
 import Shop from '../core/Shop'
 import Product from '../core/Product'
-// import Cart from '../core/Cart'
+import Cart from '../core/Cart'
 // import Profile from '../user/Profile'
 // import ManageProducts from '../admin/ManageProducts'
 // import ManageCategories from '../admin/ManageCategory'
@@ -30,6 +30,7 @@ const Routes = () => {
                 <Route path="/signin" exact component={Signin} />
                 <Route path="/signup" exact component={Signup} />
                 <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
+                <Route path="/cart" exact component={Cart} />
                 <AdminRoute path="/create/category" exact component={AddCategory} />
                 <AdminRoute path="/create/product" exact component={AddProduct} />
                 <AdminRoute path="/admin/orders" exact component={Orders} />
@@ -38,7 +39,7 @@ const Routes = () => {
                 <Route path="/shop" exact component={Shop} />
 
 
-                {/*<Route path="/cart" exact component={Cart} />*/}
+                {/**/}
                 {/*<Route path="/signin" exact component={Signin} />*/}
                 {/*<Route path="/signup" exact component={Signup} />*/}
                 {/*<Route path="/sessionExpired" exact component={sessionExpired} />*/}
