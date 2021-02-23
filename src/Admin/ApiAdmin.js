@@ -86,6 +86,10 @@ export const getStatusValues = (userId, token) => {
 };
 
 export const updateOrderStatus = (userId, token, orderId, status) => {
+
+    console.log("userId", userId)
+    console.log("orderId", orderId)
+    console.log("token", token)
     return fetch(`${API}/order/${orderId}/updateStatus/${userId}`, {
         method: 'PUT',
         headers: {

@@ -95,6 +95,10 @@ export const getBraintreeToken = (userId, token) => {
 }
 
 export const processPayment = (userId, token, paymentData) => {
+
+    console.log("++++++++Payment Data+++++++++++")
+    console.log(paymentData)
+    console.log("++++++++Payment Data+++++++++++")
     return fetch(`${API}/braintree/payment/${userId}`, {
         method: "POST",
         headers: {
@@ -112,6 +116,8 @@ export const processPayment = (userId, token, paymentData) => {
 };
 
 export const createOrder = (userId, token, createOrderData) => {
+
+    console.log("create order data")
     return fetch(`${API}/order/create/${userId}`, {
         method: "POST",
         headers: {
