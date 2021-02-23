@@ -67,12 +67,15 @@ const Dashboard = () => {
                                     {h.products.map((p, i) => {
                                         return (
                                             <div key={i}>
-                                                <h6>Product name: {p.name}</h6>
-                                                <h6>
-                                                    Product price: ₹ {p.price}
+                                                <h6>Product Name:  {p.name}</h6>
+                                                <h6 style={{color : 'red'}}>
+                                                    Shipping Status:  {h.status}
                                                 </h6>
                                                 <h6>
-                                                    Purchased date:{" "}
+                                                    Product Price: ₹ {p.price}
+                                                </h6>
+                                                <h6>
+                                                    Purchased Date: {" "}
                                                     {moment(
                                                         p.createdAt
                                                     ).fromNow()}

@@ -42,6 +42,8 @@ const Home = () => {
         <Layout title="Home Page" description="Book Shop"
                 className="container-fluid"
         >
+            {/*layout==Menu-- jumbtron then search*/}
+
             <Search />
             <h2 className="mb-4">New Arrivals</h2>
             <div className="row">
@@ -52,6 +54,10 @@ const Home = () => {
                 ))}
             </div>
         </Layout>
+
+
+
+
     )
 }
 export default Home;

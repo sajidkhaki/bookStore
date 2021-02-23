@@ -1,5 +1,6 @@
 import React from 'react';
 import Menu from '../core/Menu'
+import Footer from '../core/Footer'
 import "../style.css"
 
 const Layout = ({ title = "Title", description = "Description", className, children }) => (
@@ -10,7 +11,11 @@ const Layout = ({ title = "Title", description = "Description", className, child
             <p className="lead">{description}</p>
         </div>
         <div className={className}>{children}</div>
+
+        <Footer/>
     </div>
+
+
 )
 
 export default Layout;
