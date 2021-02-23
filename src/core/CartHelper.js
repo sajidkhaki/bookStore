@@ -1,10 +1,10 @@
 export const addItem = (item, id, next) => {
 
-    console.log("Add to cart", id)
+    //console.log("Add to cart", id)
     let cart = []
     if (typeof window !== "undefined") {
         if (localStorage.getItem('cart')) {
-            console.log("localStorage")
+            //console.log("Checking storage", localStorage.getItem('cart'))
             cart = JSON.parse(localStorage.getItem('cart'))
         }
         cart.push({
@@ -34,7 +34,7 @@ export const itemTotal = () => {
 
     if (typeof window !== "undefined") {
         if (localStorage.getItem('cart')) {
-            console.log("localStorage")
+            //console.log("item total", localStorage.getItem('cart'))
             return JSON.parse(localStorage.getItem('cart')).length
         }
         else {
@@ -47,7 +47,7 @@ export const getCart = () => {
 
     if (typeof window !== "undefined") {
         if (localStorage.getItem('cart')) {
-            console.log('Getting card item', localStorage.getItem('cart'))
+            //console.log('Getting card item', localStorage.getItem('cart'))
             return JSON.parse(localStorage.getItem('cart'))
         }
         else {

@@ -18,7 +18,7 @@ const Card = ({
 
     const [count, setCount] = useState(product.count);  // getting from home page
 
-    console.log('Count',count)
+    // console.log('Count',count)
 
     const showViewButton = (showViewProductButton) => {
         return (

@@ -19,7 +19,7 @@ export const SignupData = (userData) => {
 }
 
 export const SigninData = (user) => {
-    console.log("Data", user)
+    //console.log("Data", user)
     return fetch(`${API}/signin`, {
         method: "POST",
         headers: {
@@ -29,7 +29,7 @@ export const SigninData = (user) => {
         body: JSON.stringify(user)
     })
         .then(response => {
-            console.log("Response", response)
+           // console.log("Response", response)
             return response.json()
         }).catch(err => {
             console.log("Error", err)
@@ -52,7 +52,7 @@ export const signout = (next) => {
             method: "GET"
         })
             .then(response => {
-                console.log("Signout Response", response)
+                //console.log("Signout Response", response)
             }).catch(err => {
                 console.log("Error", err)
             })

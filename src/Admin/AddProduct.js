@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout'
 import { isAuthenticated } from '../Auth/index'
 import { createProduct, getCategories } from '../Admin/ApiAdmin'
-import { Redirect } from 'react-router-dom'
 import toaster from 'toasted-notes'
-// import 'toasted-notes/src/styles.css'; // optional styles
 
 
 const AddProduct = () => {

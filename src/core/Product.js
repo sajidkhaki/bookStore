@@ -4,14 +4,14 @@ import { read } from './ApiCore';
 import Card from './Card'
 
 const Product = props => {
-     console.log("Params", props.match.params.productId)
+     //console.log("Params", props.match.params.productId)
     const [product, setProduct] = useState({});
     const [relatedProduct, setRelatedProduct] = useState([]);
     const [error, setError] = useState(false);
 
     const loadSingleProduct = productId => {
         read(productId).then(data => {
-            console.log("data of single product", data)
+            //console.log("data of single product", data)
             if (data.error) {
                 setError(data.error);
             } else {

@@ -4,7 +4,7 @@ import { API } from "../Config";
 import { Carousel } from 'react-bootstrap';
 const ShowImage = ({ item, url }) => {
 
-    console.log(`items ${JSON.stringify(item._id)}`)
+    //console.log(`items ${JSON.stringify(item._id)}`)
     return (
 
         <Carousel>

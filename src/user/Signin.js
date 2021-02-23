@@ -17,9 +17,6 @@ const Signin = () => {
 
     const { user } = isAuthenticated()
 
-    console.log("++++++++++++++=USER++++++++++++++++")
-    console.log(user)
-    console.log("++++++++++++++=USER++++++++++++++++")
 
 
     const handleChange = name => event => {
@@ -32,7 +29,7 @@ const Signin = () => {
         setValues({ ...values, error: false, loading: true })
         SigninData({ email: email, password: password })
             .then(data => {
-                console.log("Response from server end", data)
+               // console.log("Response from server end", data)
                 if (data.error) {
                     setValues({ ...values, error: data.error, loading: false })
                 }
