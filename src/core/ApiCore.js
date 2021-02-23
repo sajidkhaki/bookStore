@@ -25,6 +25,8 @@ export const getCategories = () => {
         })
 }
 
+
+/*getting filtered from checkbox*/
 export const getFilteredProducts = (skip, limit, filters = {}) => {
     const data = {
         limit, skip, filters
