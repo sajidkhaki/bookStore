@@ -16,9 +16,9 @@ const Card = ({
 
     const [redirect, setRedirect] = useState(false)
 
-    const [count, setCount] = useState(product.count);
+    const [count, setCount] = useState(product.count);  // getting from home page
 
-console.log(`Card products ${JSON.stringify(product.name)}`)
+    console.log('Count',count)
 
     const showViewButton = (showViewProductButton) => {
         return (
@@ -49,7 +49,7 @@ console.log(`Card products ${JSON.stringify(product.name)}`)
 
     const showCartButton = (quantity, showAddToCartButton) => {
 
-    //Authenticate here to see admin or user, if user let him show this buton
+        //Authenticate here to see admin or user, if user let him show this buton
 
         return quantity > 0 && showAddToCartButton &&  user && user.role ===0  ? (
 
@@ -78,10 +78,15 @@ console.log(`Card products ${JSON.stringify(product.name)}`)
     };
 
     const handleChange = productId => event => {
-        setRun(!run); // run useEffect in parent Cart
+
+        console.log("updating item count", event.target.value,   product.count)
+        setRun(!run);           // run useEffect in parent Cart
         setCount(event.target.value < 1 ? 1 : event.target.value);
-        if (event.target.value >= 1) {
+        if (event.target.value >= 1 && event.target.value<=product.quantity) {
             updateItem(productId, event.target.value);
+        }else{
+            alert("Please check stock ")
+            setCount(0)
         }
     };
 
