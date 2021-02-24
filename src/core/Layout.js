@@ -6,7 +6,7 @@ import "../style.css"
 const Layout = ({ title = "Title", description = "Description", className, children }) => (
     <div>
         <Menu />
-        <div className="jumbotron">
+        <div className="jumbotron sticky-top">
             <h2>{title}</h2>
             <p className="lead">{description}</p>
         </div>

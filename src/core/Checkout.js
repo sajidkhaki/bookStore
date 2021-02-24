@@ -97,6 +97,8 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                             amount: response.transaction.amount,
                             address: deliveryAddress
                         };
+
+                        console.log("FInal products", createOrderData)
                         createOrder(userId, token, createOrderData)
                         // empty cart
                             .then(response => {
