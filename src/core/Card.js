@@ -3,16 +3,16 @@ import { Link, Redirect } from 'react-router-dom';
 import ShowImage from './ShowImage'
 import moment from "moment"
 import { addItem, updateItem, removeCartItem } from './CartHelper'
-import {isAuthenticated} from "../Auth";
+import { isAuthenticated } from "../Auth";
 
 const Card = ({
-                  product, showViewProductButton = true,
-                  showAddToCartButton = true,
-                  cartUpdate = false,
-                  showRemoveProductButton = false,
-                  setRun = f => f,
-                  run = undefined
-              }) => {
+    product, showViewProductButton = true,
+    showAddToCartButton = true,
+    cartUpdate = false,
+    showRemoveProductButton = false,
+    setRun = f => f,
+    run = undefined
+}) => {
 
     const [redirect, setRedirect] = useState(false)
 
@@ -33,7 +33,7 @@ const Card = ({
     }
 
     const addToCart = () => {
-        addItem(product,product._id, () => {
+        addItem(product, product._id, () => {
             setRedirect(true)
         })
     }
@@ -51,14 +51,14 @@ const Card = ({
 
         //Authenticate here to see admin or user, if user let him show this buton
 
-        return quantity > 0 && showAddToCartButton &&  user && user.role ===0  ? (
+        return quantity > 0 && showAddToCartButton && user && user.role === 0 ? (
 
             <button onClick={addToCart} className="btn btn-outline-warning mt-2 mb-2">
                 Add to cart
             </button>
         ) : (
-            <span></span>
-        );
+                <span></span>
+            );
     }
 
     const showRemoveButton = showRemoveProductButton => {
@@ -79,12 +79,12 @@ const Card = ({
 
     const handleChange = productId => event => {
 
-        console.log("updating item count", event.target.value,   product.count)
+        console.log("updating item count", event.target.value, product.count)
         setRun(!run);           // run useEffect in parent Cart
         setCount(event.target.value < 1 ? 1 : event.target.value);
-        if (event.target.value >= 1 && event.target.value<=product.quantity) {
+        if (event.target.value >= 1 && event.target.value <= product.quantity) {
             updateItem(productId, event.target.value);
-        }else{
+        } else {
             alert("Please check stock ")
             setCount(0)
         }
@@ -99,21 +99,21 @@ const Card = ({
                             <span className="input-group-text">Adjust Quantity</span>
                         </div>
                         <input type="number" className="form-control" value={count}
-                               onChange={handleChange(product._id)} />
+                            onChange={handleChange(product._id)} />
                     </div>
                 </div>
             )
         );
     };
     const showStock = quantity => {
-        return quantity >0 ? (
+        return quantity > 0 ? (
             <span className="badge badge-primary badge-pill">In Stock {product.quantity} </span>
         ) : (
-            <span className="badge badge-primary badge-pill">Out of Stock </span>
-        );
+                <span className="badge badge-primary badge-pill">Out of Stock </span>
+            );
     };
     return (
-        <div className="card">
+        <div className="card col-sm-12">
             <div className="card-header name">{product.name}</div>
             <div className="card-body">
                 {shouldRedirect(redirect)}
