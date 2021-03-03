@@ -40,7 +40,7 @@ const Home = () => {
 
     return (
         <Layout title="Home Page" description="Book Shop"
-                className="container-fluid"
+            className="container-fluid"
         >
             {/*layout==Menu-- jumbtron then search*/}
 
@@ -48,7 +48,7 @@ const Home = () => {
             <h2 className="mb-4">New Arrivals</h2>
             <div className="row">
                 {productsByArrival.map((product, i) => (
-                    <div key={i} className="col-4 mb-3">
+                    <div key={i} className="col-md-4 col-sm-12 mb-3">
                         <Card product={product} />
                     </div>
                 ))}

@@ -67,7 +67,15 @@
   .jumbotron h2 {
     margin-top: 10px;
   }
+.input-group-text{
+  margin-bottom: -42px;
 }
+.input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 81%;
+  }
+  }
 
 /**
  * jumbotron animation

@@ -7,7 +7,7 @@ const ShowImage = ({ item, url }) => {
     //console.log(`items ${JSON.stringify(item._id)}`)
     return (
 
-        <Carousel>
+        <Carousel className="col-12">
             <Carousel.Item>
                 <img
                     src={`${API}/${url}/photo/${item._id}`}

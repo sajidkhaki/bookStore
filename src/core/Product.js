@@ -4,7 +4,7 @@ import { read } from './ApiCore';
 import Card from './Card'
 
 const Product = props => {
-     //console.log("Params", props.match.params.productId)
+    //console.log("Params", props.match.params.productId)
     const [product, setProduct] = useState({});
     const [relatedProduct, setRelatedProduct] = useState([]);
     const [error, setError] = useState(false);
@@ -33,9 +33,9 @@ const Product = props => {
             className="container-fluid"
         >
             <div className="row">
-                <div className="col-8">
+                <div className="col-md-8 col-sm-12">
                     {product && product.description &&
-                    <Card product={product} showViewProductButton={false} />}
+                        <Card product={product} showViewProductButton={false} />}
                 </div>
             </div>
         </Layout>
