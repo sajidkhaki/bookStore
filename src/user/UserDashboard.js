@@ -98,10 +98,10 @@ const Dashboard = () => {
         <Layout title="User Dashboard" description={`Welcome : ${name.toUpperCase()}`}
                 className="container-fluid">
             <div className="row">
-                <div className="col-3">
+                <div className="col-md-3 col-sm-12">
                     {userLinks()}
                 </div>
-                <div className="col-9">
+                <div className="col-md-9 col-sm-12">
                     {userInfo()}
                     {purchaseHistory(history)}
                 </div>

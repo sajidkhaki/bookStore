@@ -40,12 +40,12 @@ const AdminDashboard = () => {
     }
     return (
         <Layout title="Admin Dashboard" description={`Welcome : ${name.toUpperCase()}`}
-                className="container-fluid">
+            className="container-fluid">
             <div className="row">
-                <div className="col-3">
+                <div className="col-md-3 col-sm-12">
                     {adminLinks()}
                 </div>
-                <div className="col-9">
+                <div className="col-md-9 col-sm-12">
                     {adminInfo()}
                 </div>
             </div>
