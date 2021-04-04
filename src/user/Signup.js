@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../core/Layout'
-import { SignupData} from '../Auth/index'
+import { SignupData } from '../Auth/index'
 import { Link } from 'react-router-dom'
 const Signup = () => {
 
@@ -9,11 +9,12 @@ const Signup = () => {
         email: "",
         password: "",
         error: "",
-        role:"", // for admin or for customer
+        // role: "", // for admin or for customer
         success: false
     })
 
-    const { name, email, password, error, role, success } = values
+    // const { name, email, password, error, role, success } = values
+    const { name, email, password, error, success } = values
 
     const handleChange = name => event => {
 
@@ -26,8 +27,9 @@ const Signup = () => {
     const clickSubmit = event => {
         event.preventDefault()
         setValues({ ...values, error: false })
-
-        SignupData({ name: name, email: email, password: password, role:role })
+        console.log({ name: name, email: email, password: password })
+        SignupData({ name: name, email: email, password: password })
+            //SignupData({ name: name, email: email, password: password, role: role })
             .then(data => {
                 console.log("Response from server end", data)
                 if (data.error) {
@@ -47,21 +49,21 @@ const Signup = () => {
             <div className="form-group">
                 <label className="text-muted">Name</label>
                 <input onChange={handleChange("name")} type="text" className="form-control"
-                       value={name} />
+                    value={name} />
             </div>
 
             <div className="form-group">
                 <label className="text-muted">Email</label>
                 <input onChange={handleChange("email")} type="email" className="form-control"
-                       value={email} />
+                    value={email} />
             </div>
 
             <div className="form-group">
                 <label className="text-muted">Password</label>
                 <input onChange={handleChange("password")} type="password" className="form-control"
-                       value={password} />
+                    value={password} />
             </div>
-
+            {/* 
             <div className="form-group">
                 <label className="text-muted">Role</label>
                 <select onChange={handleChange('role')} className="form-control">
@@ -70,7 +72,7 @@ const Signup = () => {
                     <option value='0'>User</option>
                     ))}
                 </select>
-            </div>
+            </div> */}
 
             <button onClick={clickSubmit} className="btn btn-primary">Submit</button>
         </form>
@@ -89,11 +91,11 @@ const Signup = () => {
     )
     return (
         <Layout title="Sign up" description="Welcome Guest! Please Register"
-                className="container col-md-8 offset-md-2" >
+            className="container col-md-8 offset-md-2" >
 
-            { showSuccess() }
+            { showSuccess()}
 
-            { showError() }
+            { showError()}
 
             { signUpForm()}
         </Layout >

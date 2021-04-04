@@ -13,7 +13,7 @@ const Signin = () => {
     })
     const { email, password, error, loading, redirectToReferrer } = values
 
-/*Checking alreday login*/
+    /*Checking alreday login*/
 
     const { user } = isAuthenticated()
 
@@ -29,7 +29,7 @@ const Signin = () => {
         setValues({ ...values, error: false, loading: true })
         SigninData({ email: email, password: password })
             .then(data => {
-               // console.log("Response from server end", data)
+                console.log("Response from server end", data)
                 if (data.error) {
                     setValues({ ...values, error: data.error, loading: false })
                 }
@@ -51,12 +51,12 @@ const Signin = () => {
             <div className="form-group">
                 <label className="text-muted">Email</label>
                 <input onChange={handleChange("email")} type="email" className="form-control"
-                       value={email} />
+                    value={email} />
             </div>
             <div className="form-group">
                 <label className="text-muted">Password</label>
                 <input onChange={handleChange("password")} type="password" className="form-control"
-                       value={password} />
+                    value={password} />
             </div>
             <button onClick={clickSubmit} className="btn btn-primary">Confirm identity</button>
         </form>
@@ -86,7 +86,7 @@ const Signin = () => {
     }
     return (
         <Layout title="Sign in" description="Sign In to Buy"
-                className="container col-md-8 offset-md-2" >
+            className="container col-md-8 offset-md-2" >
             { showLoading()}
             { showError()}
             { signInForm()}
